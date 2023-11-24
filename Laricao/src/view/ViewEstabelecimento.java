@@ -73,18 +73,12 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
         lbTipoProd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbTipoProd.setText("Tipo:");
 
-        tfNomeProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNomeProdActionPerformed(evt);
-            }
-        });
-
         lbDropTipoProd.setText("Preencha as informações do novo produto a ser cadastrado:");
 
         lbNomeProd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbNomeProd.setText("Nome:");
 
-        dropTipoProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Lanche", "Bebida", "Adicional" }));
+        dropTipoProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Lanche", "Bebida", "Adicional", "Outro..." }));
         dropTipoProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dropProdActionPerformed(evt);
@@ -263,10 +257,6 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
     private void dropProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dropProdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dropProdActionPerformed
-
-    private void tfNomeProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeProdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfNomeProdActionPerformed
 
     private void btCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadProdActionPerformed
         ProdController pc = new ProdController();

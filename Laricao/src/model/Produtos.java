@@ -63,9 +63,9 @@ public class Produtos {
         this.disponibilidade = disponibilidade;
     }
     
-    public void Incluir(Produtos prod) {
+    public void incluir(Produtos prod) {
         ProdDAO prodDAO = new ProdDAO();
-        prodDAO.Incluir(prod);
+        prodDAO.incluir(prod);
     }
             
 }

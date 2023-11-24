@@ -184,9 +184,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNomeProd">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNomeProdActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbDropTipoProd">
               <Properties>
@@ -204,11 +201,12 @@
             <Component class="javax.swing.JComboBox" name="dropTipoProd">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="5">
                     <StringItem index="0" value="Selecione"/>
                     <StringItem index="1" value="Lanche"/>
                     <StringItem index="2" value="Bebida"/>
                     <StringItem index="3" value="Adicional"/>
+                    <StringItem index="4" value="Outro..."/>
                   </StringArray>
                 </Property>
               </Properties>

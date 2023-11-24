@@ -1,4 +1,4 @@
-package laricao;
+package model;
 
 import javax.swing.JFrame;
 import view.ViewEstabelecimento;
@@ -16,7 +16,7 @@ public class Laricao {
         JFrame i = new ViewEstabelecimento();
         i.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         i.setVisible(true);
-        i.setSize(550, 550);        
+        i.setSize(650, 650);        
     }
     
 }
