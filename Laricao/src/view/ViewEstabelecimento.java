@@ -6,6 +6,8 @@
 package view;
 
 import controller.ProdController;
+import dao.ProdDAO;
+import javax.swing.table.DefaultTableModel;
 import model.Produtos;
 
 /**
@@ -54,6 +56,11 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         abaCadProd.setPreferredSize(new java.awt.Dimension(602, 700));
 
@@ -135,7 +142,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
                                 .addComponent(btRSim)
                                 .addGap(18, 18, 18)
                                 .addComponent(btRNao)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jCadProdLayout.setVerticalGroup(
             jCadProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +262,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dropProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dropProdActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_dropProdActionPerformed
 
     private void btCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadProdActionPerformed
@@ -269,6 +276,20 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
         disponibilidade = prod.isDisponibilidade();
         pc.Incluir(tfNomeProd.getText(),taDescProd.getText(), dropTipoProd.getSelectedItem().toString(), Float.parseFloat(tfValorProd.getText()), disponibilidade );
     }//GEN-LAST:event_btCadProdActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        ProdDAO prodDao = new ProdDAO();
+        //ATUALIZA A TABELA DE EDIÇÃO DOS COLABORADORES
+        DefaultTableModel tabelaColab = (DefaultTableModel) jTable3.getModel();
+        Object[] dadosProd = new Object[6];
+        int elementosPorLinha = 6;
+        for (int i = 0; i < prodDao.consultar().size(); i += elementosPorLinha) {
+            for (int j = 0; j < elementosPorLinha && i + j < prodDao.consultar().size(); j++) {
+                dadosProd[j] = prodDao.consultar().get(i + j);
+            }
+            tabelaColab.addRow(dadosProd);
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

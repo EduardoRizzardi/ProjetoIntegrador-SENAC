@@ -17,7 +17,7 @@ public class ProdController {
         if(!nome.equals("")&&!descricao.equals("")&&!tipo.equals("Selecione")&&!valor_unitario.equals(""))
         {
             Produtos prod = new Produtos(nome, valor_unitario, descricao, tipo, disponibilidade);
-            prod.Incluir(prod);
+            prod.incluir(prod);
         }
     }
 }
