@@ -279,7 +279,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         ProdDAO prodDao = new ProdDAO();
-        //ATUALIZA A TABELA DE EDIÇÃO DOS COLABORADORES
+        //ATUALIZA A TABELA DE EDIÇÃO DOS PRODUTOS
         DefaultTableModel tabelaColab = (DefaultTableModel) jTable3.getModel();
         Object[] dadosProd = new Object[6];
         int elementosPorLinha = 6;
