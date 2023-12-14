@@ -16,7 +16,7 @@ public class Laricao {
         JFrame i = new ViewEstabelecimento();
         i.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         i.setVisible(true);
-        i.setSize(650, 650);        
+        i.setSize(650, 750);        
     }
     
 }

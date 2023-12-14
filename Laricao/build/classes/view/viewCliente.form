@@ -23,12 +23,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+=======
+          <EmptySpace min="0" pref="691" max="32767" attributes="0"/>
+>>>>>>> 32f6e2b6ed76bc55fc0db03f1229841384394a77
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+=======
+          <EmptySpace min="0" pref="537" max="32767" attributes="0"/>
+>>>>>>> 32f6e2b6ed76bc55fc0db03f1229841384394a77
       </Group>
     </DimensionLayout>
   </Layout>

@@ -1,9 +1,30 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+</project-private>
+=======
+>>>>>>> 32f6e2b6ed76bc55fc0db03f1229841384394a77
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/182220019/Documents/NetBeansProjects/Projeto%20Integrador/Laricao/src/view/viewCliente.java</file>
         </group>
     </open-files>
 </project-private>
+=======
+            <file>file:/C:/Users/182220040/Documents/projeto_integrador_TDS/Laricao/src/dao/ProdDAO.java</file>
+            <file>file:/C:/Users/182220040/Documents/projeto_integrador_TDS/Laricao/src/controller/ProdController.java</file>
+            <file>file:/C:/Users/182220040/Documents/projeto_integrador_TDS/Laricao/src/model/Produtos.java</file>
+            <file>file:/C:/Users/182220040/Documents/projeto_integrador_TDS/Laricao/src/model/Laricao.java</file>
+            <file>file:/C:/Users/182220040/Documents/projeto_integrador_TDS/Laricao/src/view/ViewEstabelecimento.java</file>
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> 3458a2d97558e065517b3f042ff93149f5d5e75b
+>>>>>>> 32f6e2b6ed76bc55fc0db03f1229841384394a77

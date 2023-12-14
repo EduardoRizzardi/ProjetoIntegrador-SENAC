@@ -10,9 +10,10 @@ public class Produtos {
     private float valor_unitario;
     private String descricao;          
     private String tipo;          
-    private boolean disponibilidade;
+    private String disponibilidade;
+    private String id;
 
-    public Produtos(String nome, float valor_unitario, String descricao, String tipo, boolean disponibilidade) {
+    public Produtos(String nome, float valor_unitario, String descricao, String tipo, String disponibilidade) {
         this.nome = nome;
         this.valor_unitario = valor_unitario;
         this.descricao = descricao;
@@ -21,6 +22,14 @@ public class Produtos {
     }
 
     public Produtos() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -55,11 +64,11 @@ public class Produtos {
         this.tipo = tipo;
     }
 
-    public boolean isDisponibilidade() {
+    public String getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(boolean disponibilidade) {
+    public void setDisponibilidade(String disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
     
