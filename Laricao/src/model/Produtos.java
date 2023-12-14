@@ -11,6 +11,7 @@ public class Produtos {
     private String descricao;          
     private String tipo;          
     private String disponibilidade;
+    private String id;
 
     public Produtos(String nome, float valor_unitario, String descricao, String tipo, String disponibilidade) {
         this.nome = nome;
@@ -21,6 +22,14 @@ public class Produtos {
     }
 
     public Produtos() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {

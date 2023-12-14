@@ -146,7 +146,7 @@
                           <Component id="lbReais" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btCadProd" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="385" max="32767" attributes="0"/>
+                      <EmptySpace pref="287" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -304,8 +304,8 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="lbMensEditar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tabelaProd" min="-2" pref="498" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="tabelaProd" min="-2" pref="415" max="-2" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btDeletar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -325,6 +325,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEditarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btDeletar">
               <Properties>
@@ -347,7 +350,7 @@
                         <Column editable="false" title="Tipo" type="java.lang.String"/>
                         <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
                         <Column editable="false" title="Valor unit&#xe1;rio" type="java.lang.String"/>
-                        <Column editable="false" title="Dispon&#xed;vel" type="java.lang.Boolean"/>
+                        <Column editable="false" title="Dispon&#xed;vel" type="java.lang.String"/>
                       </Table>
                     </Property>
                   </Properties>

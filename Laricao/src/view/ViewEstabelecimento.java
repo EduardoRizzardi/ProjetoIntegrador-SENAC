@@ -7,6 +7,7 @@ package view;
 
 import controller.ProdController;
 import dao.ProdDAO;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Produtos;
 
@@ -172,7 +173,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
                     .addComponent(tfValorProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbReais)
                     .addComponent(btCadProd))
-                .addContainerGap(385, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         abaCadProd.addTab("Cadastrar Produtos", jCadProd);
@@ -180,6 +181,11 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
         lbMensEditar.setText("Selecione um elemento na tabela para editar ou excluir:");
 
         btEditar.setText("Editar");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
 
         btDeletar.setText("Deletar");
 
@@ -192,7 +198,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -230,8 +236,8 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbMensEditar)
                 .addGap(18, 18, 18)
-                .addComponent(tabelaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tabelaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(jEditarProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btEditar)
                     .addComponent(btDeletar))
@@ -269,12 +275,13 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
         ProdController pc = new ProdController();
         Produtos prod = new Produtos();
         if(btRSim.isSelected()){
-            prod.setDisponibilidade(true);
-        } else if(btRNao.isSelected()){
-            prod.setDisponibilidade(false);
+            prod.setDisponibilidade("Sim");
+        } else{
+            prod.setDisponibilidade("Não");
         }
-        disponibilidade = prod.isDisponibilidade();
-        pc.Incluir(tfNomeProd.getText(),taDescProd.getText(), dropTipoProd.getSelectedItem().toString(), Float.parseFloat(tfValorProd.getText()), disponibilidade );
+        pc.Incluir(tfNomeProd.getText(),taDescProd.getText(), dropTipoProd.getSelectedItem().toString(), Float.parseFloat(tfValorProd.getText()), prod.getDisponibilidade());
+        
+        
     }//GEN-LAST:event_btCadProdActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -290,6 +297,18 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
             tabelaColab.addRow(dadosProd);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        if(jTable3.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Selecione um dos itens da tabela para editar");
+        } else{
+            DefaultTableModel modeloTabela = (DefaultTableModel) jTable3.getModel();
+            Produtos prod = new Produtos();
+            prod.setId(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString());
+            //System.out.println(prod.getId());
+            
+        }
+    }//GEN-LAST:event_btEditarActionPerformed
 
     /**
      * @param args the command line arguments
