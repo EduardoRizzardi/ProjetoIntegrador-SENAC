@@ -1,30 +1,4 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/controller/ProdController.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/model/Produtos.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/model/Laricao.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/dao/Connection.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/model/Pedidos.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/view/ViewEstabelecimento.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/dao/ProdDAO.java</file>
-            <file>file:/C:/Users/182200153/Documents/NetBeansProjects/ProjetoIntegrador/Laricao/src/view/viewCliente.java</file>
-        </group>
-    </open-files>
 </project-private>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/182220040/Documents/projeto_integrador/Laricao/src/dao/ProdDAO.java</file>
-            <file>file:/C:/Users/182220040/Documents/projeto_integrador/Laricao/src/view/ViewEstabelecimento.java</file>
-            <file>file:/C:/Users/182220040/Documents/projeto_integrador/Laricao/src/controller/ProdController.java</file>
-        </group>
-    </open-files>
-</project-private>
->>>>>>> 70e4e0be6cb1a4711b3c065a3a93106ea709b2a1
