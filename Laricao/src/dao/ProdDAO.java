@@ -18,8 +18,8 @@ public class ProdDAO {
     public void incluir(Produtos prod) {
         String sql =  "INSERT INTO produto (nome, disponivel, valor_unitario, tipo, descricao) VALUES ( "
             + " '" + prod.getNome() + "' , "
-            + " " + prod.isDisponibilidade() + " , "
-            + " " + prod.getValor_unitario()+ " , "
+            + " '" + prod.getDisponibilidade() + "' , "
+            + " " + prod.getValor_unitario() + " , "
             + " '" + prod.getTipo() + "' , "
             + " '" + prod.getDescricao() + "' )";
         System.out.println(sql);

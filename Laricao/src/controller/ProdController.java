@@ -12,9 +12,9 @@ import model.Produtos;
  * @author 182220040
  */
 public class ProdController {
-    public void Incluir(String nome, String descricao, String tipo, Float valor_unitario,boolean disponibilidade) {
+    public void Incluir(String nome, String descricao, String tipo, Float valor_unitario, String disponibilidade) {
         
-        if(!nome.equals("")&&!descricao.equals("")&&!tipo.equals("Selecione")&&!valor_unitario.equals(""))
+        if(!nome.equals("")&&!descricao.equals("")&&!tipo.equals("Selecione")&&!valor_unitario.equals(0.00)&&!disponibilidade.equals(""))
         {
             Produtos prod = new Produtos(nome, valor_unitario, descricao, tipo, disponibilidade);
             prod.incluir(prod);

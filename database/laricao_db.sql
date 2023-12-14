@@ -4,7 +4,7 @@ USE laricao_db;
 CREATE TABLE produto (
 	id_produto INT(5) AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL UNIQUE,
-    disponivel BOOLEAN NOT NULL,
+    disponivel VARCHAR(3) NOT NULL,
     valor_unitario FLOAT(5,2) NOT NULL,
     tipo VARCHAR(30) NOT NULL,
     descricao VARCHAR(1000) NOT NULL,
