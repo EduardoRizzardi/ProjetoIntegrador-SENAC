@@ -76,6 +76,11 @@ public class Produtos {
         ProdDAO prodDAO = new ProdDAO();
         prodDAO.incluir(prod);
     }
+    
+    public void alterar(Produtos prod) {
+        ProdDAO prodDAO = new ProdDAO();
+        //prodDAO.alterar(prod);
+    }
             
 }
 

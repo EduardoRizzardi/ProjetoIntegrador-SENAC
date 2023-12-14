@@ -47,4 +47,15 @@ public class ProdDAO {
         }
         return lista;
     }
+    
+    public void alterar(){
+        String sql = "UPDATE produto SET nome = '" + this.getNome() + "',"
+                   + "disponivel = '" + this.getDisponibilidade() + "' ,"
+                   + "valor_unitario = '" + this.getValor_unitario()()+ "' ,"
+                   + "tipo = '" + this.getTipo()+ "' ,"
+                   + "descricao = '" + this.getDescricao()+ "'"
+                   + "WHERE id = '" + this.getId() + "'";
+        System.out.println(sql);
+        Conexao.executar(sql);
+    }
 }

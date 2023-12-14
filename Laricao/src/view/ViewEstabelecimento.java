@@ -7,6 +7,7 @@ package view;
 
 import controller.ProdController;
 import dao.ProdDAO;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Produtos;
@@ -285,6 +286,8 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
     }//GEN-LAST:event_btCadProdActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        //JFrame j = new janelaEdicao();
+        //j.setVisible(false);
         ProdDAO prodDao = new ProdDAO();
         //ATUALIZA A TABELA DE EDIÇÃO DOS PRODUTOS
         DefaultTableModel tabelaColab = (DefaultTableModel) jTable3.getModel();
@@ -305,7 +308,11 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
             DefaultTableModel modeloTabela = (DefaultTableModel) jTable3.getModel();
             Produtos prod = new Produtos();
             prod.setId(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString());
-            //System.out.println(prod.getId());
+            JFrame j = new janelaEdicao();
+            j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            j.setVisible(true);
+            j.setSize(407, 460);
+            
             
         }
     }//GEN-LAST:event_btEditarActionPerformed

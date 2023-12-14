@@ -20,4 +20,13 @@ public class ProdController {
             prod.incluir(prod);
         }
     }
+    
+    public void Alterar(String nome, String descricao, String tipo, Float valor_unitario, String disponibilidade) {
+        
+        if(!nome.equals("")&&!descricao.equals("")&&!tipo.equals("Selecione")&&!valor_unitario.equals(0.00)&&!disponibilidade.equals(""))
+        {
+            Produtos prod = new Produtos(nome, valor_unitario, descricao, tipo, disponibilidade);
+            prod.alterar(prod);
+        }
+    }
 }

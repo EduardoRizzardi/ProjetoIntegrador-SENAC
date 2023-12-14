@@ -2,6 +2,7 @@ package model;
 
 import javax.swing.JFrame;
 import view.ViewEstabelecimento;
+import view.janelaEdicao;
 
 /**
  *
@@ -16,7 +17,9 @@ public class Laricao {
         JFrame i = new ViewEstabelecimento();
         i.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         i.setVisible(true);
-        i.setSize(650, 750);        
+        i.setSize(650, 750);    
+        
+        
     }
     
 }
