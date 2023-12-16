@@ -21,12 +21,19 @@ public class ProdController {
         }
     }
     
-    public void Alterar(String nome, String descricao, String tipo, Float valor_unitario, String disponibilidade) {
+    public void Alterar(String nome, String descricao, String tipo, Float valor_unitario, String disponibilidade, String id) {
         
         if(!nome.equals("")&&!descricao.equals("")&&!tipo.equals("Selecione")&&!valor_unitario.equals(0.00)&&!disponibilidade.equals(""))
         {
-            Produtos prod = new Produtos(nome, valor_unitario, descricao, tipo, disponibilidade);
+            Produtos prod = new Produtos(nome, valor_unitario, descricao, tipo, disponibilidade, id);
             prod.alterar(prod);
         }
     }
+    
+    /*public void Deletar(String id) {
+        Produtos prod = new Produtos(id);
+        prod.deletar(prod);
+    }*/
+
 }
+

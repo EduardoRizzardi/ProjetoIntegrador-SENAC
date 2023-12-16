@@ -9,10 +9,10 @@ public class Produtos {
     private String nome;
     private float valor_unitario;
     private String descricao;          
-    private String tipo;          
+    private String tipo;
     private String disponibilidade;
     private String id;
-
+    
     public Produtos(String nome, float valor_unitario, String descricao, String tipo, String disponibilidade) {
         this.nome = nome;
         this.valor_unitario = valor_unitario;
@@ -20,7 +20,20 @@ public class Produtos {
         this.tipo = tipo;
         this.disponibilidade = disponibilidade;
     }
-
+    
+    public Produtos(String nome, float valor_unitario, String descricao, String tipo, String disponibilidade, String id) {
+        this.nome = nome;
+        this.valor_unitario = valor_unitario;
+        this.descricao = descricao;
+        this.tipo = tipo;
+        this.disponibilidade = disponibilidade;
+        this.id = id;
+    }
+    
+    public Produtos(String id) {
+        this.id = id;
+    }
+    
     public Produtos() {
     }
 
@@ -79,8 +92,13 @@ public class Produtos {
     
     public void alterar(Produtos prod) {
         ProdDAO prodDAO = new ProdDAO();
-        //prodDAO.alterar(prod);
+        prodDAO.alterar(prod);
     }
+    
+    /*public void deletar(Produtos prod) {
+        ProdDAO prodDAO = new ProdDAO();
+        prodDAO.deletar(prod);    
+    }*/
             
 }
 

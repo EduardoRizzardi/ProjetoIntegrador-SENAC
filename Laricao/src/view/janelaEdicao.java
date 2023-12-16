@@ -5,6 +5,10 @@
  */
 package view;
 
+import controller.ProdController;
+import javax.swing.JOptionPane;
+import model.Produtos;
+
 /**
  *
  * @author 182220040
@@ -29,7 +33,7 @@ public class janelaEdicao extends javax.swing.JFrame {
 
         bgDisponibilidade = new javax.swing.ButtonGroup();
         janelaEdicao = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        btConcluiEdicao = new javax.swing.JToggleButton();
         tfNome = new javax.swing.JTextField();
         lbEnunciado = new javax.swing.JLabel();
         lbNome = new javax.swing.JLabel();
@@ -44,11 +48,18 @@ public class janelaEdicao extends javax.swing.JFrame {
         lbValorProd = new javax.swing.JLabel();
         lbReais = new javax.swing.JLabel();
         tfValorProd = new javax.swing.JTextField();
+        id = new javax.swing.JLabel();
+        tfId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton1.setText("Concluir");
+        btConcluiEdicao.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btConcluiEdicao.setText("Concluir");
+        btConcluiEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConcluiEdicaoActionPerformed(evt);
+            }
+        });
 
         lbEnunciado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbEnunciado.setText("Informe os novos dados para o produto:");
@@ -85,33 +96,39 @@ public class janelaEdicao extends javax.swing.JFrame {
         lbReais.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lbReais.setText("R$");
 
+        id.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        id.setText("Id:");
+
         javax.swing.GroupLayout janelaEdicaoLayout = new javax.swing.GroupLayout(janelaEdicao);
         janelaEdicao.setLayout(janelaEdicaoLayout);
         janelaEdicaoLayout.setHorizontalGroup(
             janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(janelaEdicaoLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton1)
-                    .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbDisponibilidade)
-                        .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfNome)
-                            .addComponent(lbDescricao)
-                            .addComponent(lbNome)
-                            .addComponent(lbEnunciado)
-                            .addComponent(jScrollPane1))
+                .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbDisponibilidade)
+                    .addGroup(janelaEdicaoLayout.createSequentialGroup()
+                        .addComponent(btRSim)
+                        .addGap(4, 4, 4)
+                        .addComponent(btRNao))
+                    .addComponent(lbTipo)
+                    .addComponent(dropTipoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbValorProd)
+                    .addGroup(janelaEdicaoLayout.createSequentialGroup()
+                        .addComponent(lbReais)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfValorProd, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(id)
+                    .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(janelaEdicaoLayout.createSequentialGroup()
-                            .addComponent(btRSim)
-                            .addGap(4, 4, 4)
-                            .addComponent(btRNao))
-                        .addComponent(lbTipo)
-                        .addComponent(dropTipoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbValorProd)
-                        .addGroup(janelaEdicaoLayout.createSequentialGroup()
-                            .addComponent(lbReais)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfValorProd, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btConcluiEdicao))
+                        .addComponent(tfNome, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbDescricao, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbNome, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbEnunciado, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(0, 24, Short.MAX_VALUE))
         );
         janelaEdicaoLayout.setVerticalGroup(
@@ -133,7 +150,7 @@ public class janelaEdicao extends javax.swing.JFrame {
                 .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btRSim)
                     .addComponent(btRNao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(lbTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dropTipoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,9 +160,13 @@ public class janelaEdicao extends javax.swing.JFrame {
                 .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbReais)
                     .addComponent(tfValorProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(id)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(janelaEdicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConcluiEdicao))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,7 +183,19 @@ public class janelaEdicao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void btConcluiEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConcluiEdicaoActionPerformed
+        ProdController pc = new ProdController();
+        Produtos prod = new Produtos();
+        if(btRSim.isSelected()){
+            prod.setDisponibilidade("Sim");
+        } else{
+            prod.setDisponibilidade("Não");
+        }
+        pc.Alterar(tfNome.getText(),taDescricao.getText(), dropTipoProd.getSelectedItem().toString(), Float.parseFloat(tfValorProd.getText()), prod.getDisponibilidade(), tfId.getText());
+        dispose();
+        JOptionPane.showMessageDialog(this, "Edição realizada com sucesso!");
+    }//GEN-LAST:event_btConcluiEdicaoActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -198,11 +231,12 @@ public class janelaEdicao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgDisponibilidade;
+    private javax.swing.JToggleButton btConcluiEdicao;
     private javax.swing.JRadioButton btRNao;
     private javax.swing.JRadioButton btRSim;
     private javax.swing.JComboBox<String> dropTipoProd;
+    private javax.swing.JLabel id;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel janelaEdicao;
     private javax.swing.JLabel lbDescricao;
     private javax.swing.JLabel lbDisponibilidade;
@@ -212,6 +246,7 @@ public class janelaEdicao extends javax.swing.JFrame {
     private javax.swing.JLabel lbTipo;
     private javax.swing.JLabel lbValorProd;
     private javax.swing.JTextArea taDescricao;
+    private javax.swing.JTextField tfId;
     private javax.swing.JTextField tfNome;
     private javax.swing.JTextField tfValorProd;
     // End of variables declaration//GEN-END:variables
