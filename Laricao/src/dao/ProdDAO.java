@@ -48,14 +48,20 @@ public class ProdDAO {
         return lista;
     }
     
-    public void alterar(){
-        String sql = "UPDATE produto SET nome = '" + this.getNome() + "',"
-                   + "disponivel = '" + this.getDisponibilidade() + "' ,"
-                   + "valor_unitario = '" + this.getValor_unitario()()+ "' ,"
-                   + "tipo = '" + this.getTipo()+ "' ,"
-                   + "descricao = '" + this.getDescricao()+ "'"
-                   + "WHERE id = '" + this.getId() + "'";
+    public void alterar(Produtos prod){
+        String sql = "UPDATE produto SET nome = '" + prod.getNome() + "',"
+                   + "disponivel = '" + prod.getDisponibilidade() + "' ,"
+                   + "valor_unitario = '" + prod.getValor_unitario()+ "' ,"
+                   + "tipo = '" + prod.getTipo()+ "' ,"
+                   + "descricao = '" + prod.getDescricao()+ "'"
+                   + "WHERE id_produto = '" + prod.getId() + "'";
         System.out.println(sql);
-        Conexao.executar(sql);
+        Connection.executar(sql);
     }
+    
+    /*public void deletar(Produtos prod){
+        String sql = "DELETE FROM produto WHERE id_produto = '" + prod.getId() + "'";
+        System.out.println(sql);
+        Connection.executar(sql);
+    }*/
 }
