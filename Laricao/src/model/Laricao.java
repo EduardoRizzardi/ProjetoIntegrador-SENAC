@@ -1,8 +1,10 @@
 package model;
 
 import javax.swing.JFrame;
+import view.ViewAdmin;
+import view.ViewCadCliente;
 import view.ViewEstabelecimento;
-import view.janelaEdicao;
+import view.ViewEdicaoProd;
 
 /**
  *
@@ -14,12 +16,20 @@ public class Laricao {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame i = new ViewEstabelecimento();
+        /*JFrame i = new ViewEstabelecimento();
         i.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         i.setVisible(true);
-        i.setSize(650, 750);    
+        i.setSize(650, 750);*/    
         
+        JFrame j = new ViewCadCliente();
+        j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        j.setVisible(true);
+        j.setSize(375, 530);
         
+        /*JFrame k = new ViewAdmin();
+        k.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        k.setVisible(true);
+        k.setSize(1158, 585);*/
     }
     
 }

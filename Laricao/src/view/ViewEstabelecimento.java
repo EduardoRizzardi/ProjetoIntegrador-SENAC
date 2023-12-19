@@ -301,7 +301,7 @@ public class ViewEstabelecimento extends javax.swing.JFrame {
             Produtos prod = new Produtos();
             prod.setId(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString());
             //prod.setPed(prod.getId());
-            JFrame j = new janelaEdicao();
+            JFrame j = new ViewEdicaoProd();
             j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             j.setVisible(true);
             j.setSize(407, 460);
